@@ -9,7 +9,8 @@
     "noImplicitUseStrict": true, //编译结果中不包含“use strict”
     "esModuleInterop": true, //启用es模块化交互es模块导出
     "noEmitOnError": true, //错误时不生成编译结果
-    "moduleResolution":"node" //设置解析模块的模式
+    "moduleResolution":"node", //设置解析模块的模式
+    "strictPropertyInitialization": true //属性必须初始化
   },
   "include":["./src"]
   // "files":["./src/demo.TS"]

@@ -1,16 +1,23 @@
 import { Color, Marks } from "./enums";
-
-export type Deck = (NormalCard | Joker)[];
-export interface NormalCard extends Card{
-    color: Color
-    mark: Marks
-};
+import { Deck } from "./deck";
 
 export interface Card {
     getString(): String
 }
 
+export interface NormalCard extends Card {
+    color: Color
+    mark: Marks
+};
 
-export interface Joker extends Card{
-    type : "big" | "small"
+
+export interface Joker extends Card {
+    type: "big" | "small"
+}
+
+export interface Player{
+    player1:Deck,
+    player2:Deck,
+    player3:Deck,
+    left:Deck
 }
