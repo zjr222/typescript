@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {  //编译选项
+    "target": "es2016", //配置编译目标代码的版本标准
+    "module": "CommonJs", //配置编译目标使用的模块化标准
+    "lib": ["es2016"],
+    "strictNullChecks": true, //获得更严格的空类型检查 null和undefined只能赋给自身
+    "outDir": "./dist", //存放ts编译后得到的js文件
+    "removeComments": true, //编译结果移除注释 
+    "noImplicitUseStrict": true, //编译结果中不包含“use strict”
+    "esModuleInterop": true, //启用es模块化交互es模块导出
+    "noEmitOnError": true, //错误时不生成编译结果
+    "moduleResolution":"node" //设置解析模块的模式
+  },
+  "include":["./src"]
+  // "files":["./src/demo.TS"]
+}
