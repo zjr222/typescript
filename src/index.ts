@@ -1,19 +1,33 @@
-import {Deck} from './deck';
-
-const deck = new Deck();
-
-deck.shuffle();
-console.log("=======洗牌后=======");
-console.log(deck.print()) 
-const result = deck.publish();
-console.log("=======发牌后=======");
-console.log("=======玩家一=======");
-console.log(result.player1.print()) 
-console.log("=======玩家二=======");
-console.log(result.player2.print());
-console.log("=======玩家三=======");
-console.log(result.player3.print()) ;
-console.log("=======剩余=======");
-console.log(result.left.print());
+import { ArrayHelper } from './ArrayHelper'
 
 
+const helper = new ArrayHelper(["134", "sadasd"]);
+
+helper.take(10)
+
+/**
+ * 泛型约束
+ */
+
+import { nameToUpperCase } from './TypeConstraint'
+
+const obj = {
+    name: "zhang ji ru",
+    age: 33,
+    gender: "男"
+}
+
+const newObj = nameToUpperCase(obj);
+console.log(newObj.name); //ZhangJiRu
+
+
+/**
+ * 多泛型
+ */
+
+import {mixinArray} from './MultipleGenerics'
+
+const obj1 = [1, 3, 4];
+const obj2 = ["a", "b", "c"];
+mixinArray(obj1, obj2);
+console.log(mixinArray(obj1, obj2))
