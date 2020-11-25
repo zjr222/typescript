@@ -1,33 +1,14 @@
-import { ArrayHelper } from './ArrayHelper'
+import "reflect-metadata";
 
-
-const helper = new ArrayHelper(["134", "sadasd"]);
-
-helper.take(10)
-
-/**
- * 泛型约束
- */
-
-import { nameToUpperCase } from './TypeConstraint'
-
-const obj = {
-    name: "zhang ji ru",
-    age: 33,
-    gender: "男"
+@Reflect.metadata("name3","华")
+@Reflect.metadata("name2","龙")
+@Reflect.metadata("name1","一个类")
+class User{
+    @Reflect.metadata("prop","一个属性")
+    prop1:string = ""
 }
 
-const newObj = nameToUpperCase(obj);
-console.log(newObj.name); //ZhangJiRu
+const obj  = new User();
 
-
-/**
- * 多泛型
- */
-
-import {mixinArray} from './MultipleGenerics'
-
-const obj1 = [1, 3, 4];
-const obj2 = ["a", "b", "c"];
-mixinArray(obj1, obj2);
-console.log(mixinArray(obj1, obj2))
+console.log(Reflect.getMetadata("name1",User));  //第二个参数需要传类名，确定知道就填写类不知道可以找到构造函数Object.getPrototypeOf(obj).constructor
+console.log(Reflect.getMetadata("prop",obj,"prop1"));

@@ -10,7 +10,10 @@
     "esModuleInterop": true, //启用es模块化交互es模块导出
     "noEmitOnError": true, //错误时不生成编译结果
     "moduleResolution":"node", //设置解析模块的模式
-    "strictPropertyInitialization": true //属性必须初始化
+    "strictPropertyInitialization": true ,//属性必须初始化
+    "noImplicitAny": true ,// 开启对隐式any的检查
+    "noImplicitThis": true, //表示this不允许隐式的指向any类型
+    "experimentalDecorators": true ,// 开启实验性的装饰器在未来的版本可能会实现装饰器的效果
   },
   "include":["./src"]
   // "files":["./src/demo.TS"]
